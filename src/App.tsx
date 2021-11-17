@@ -4,10 +4,11 @@ import { Races } from 'pages/Races';
 import { Race } from 'pages/Race';
 import { Home } from 'pages/Home';
 import { Header } from 'components/Header';
+import styles from './App.module.css';
 
 export const App = () => (
   <Router>
-    <div className="App">
+    <div className={styles.App}>
       <Header />
       <Routes>
         <Route path="/races/:id" element={<Race />} />

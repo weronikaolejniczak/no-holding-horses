@@ -5,12 +5,14 @@ export const Header = () => (
   <header
     style={{
       alignItems: 'center',
-      backgroundColor: '#59BFFF',
+      backgroundColor: 'white',
       display: 'flex',
       padding: 10,
+      paddingLeft: 30,
+      paddingRight: 30,
     }}
   >
-    <h1 style={{ color: 'white', marginRight: 25 }}> No Holding Horses 🐎 </h1>
+    <h1 style={{ marginRight: 25 }}> No Holding Horses 🐎 </h1>
     <Navigation />
   </header>
 );

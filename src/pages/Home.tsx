@@ -1,9 +1,18 @@
 import styles from 'pages/Home.module.css';
+import { ReactComponent as Horse } from 'assets/horse.svg';
 
 export const Home = () => {
   return (
     <div className={styles.home}>
-      <h2>Home</h2>
+      <Horse width={300} height={400} fill="#1976d2" />
+      <h2>There's no time for horsing around!</h2>
+      <h1>
+        <span>Place your bet </span>
+        <span style={{ color: '#1976d2', textDecoration: 'underline' }}>
+          now
+        </span>
+        !
+      </h1>
     </div>
   );
 };
