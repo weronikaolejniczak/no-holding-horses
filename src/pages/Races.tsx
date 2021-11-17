@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { getRacesRequest } from 'redux/races/actions/getRaces';
+import { getRacesRequest } from 'redux/races/getRacesActions';
 import { RacesList } from 'components/RacesList';
 import styles from 'pages/Races.module.css';
 

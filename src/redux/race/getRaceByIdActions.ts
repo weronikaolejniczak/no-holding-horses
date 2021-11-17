@@ -13,7 +13,7 @@ const getRaceByIdSuccessfully = (response: IRace[]) => ({
   payload: response,
 });
 
-const getRaceByIdUnsuccessfully = (error: unknown) => ({
+const getRaceByIdUnsuccessfully = (error: string) => ({
   type: ERaceTypes.GET_RACE_FAILURE,
   error,
 });
@@ -23,10 +23,10 @@ export const getRaceByIdRequest =
     dispatch(getRaceById());
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_RACES_API_URL}/${id}` ?? '',
+        `${process.env.REACT_APP_RACES_API_URL}/races/${id}` ?? '',
       );
       dispatch(getRaceByIdSuccessfully(response.data));
     } catch ({ message }) {
-      dispatch(getRaceByIdUnsuccessfully(message));
+      dispatch(getRaceByIdUnsuccessfully(message as string));
     }
   };

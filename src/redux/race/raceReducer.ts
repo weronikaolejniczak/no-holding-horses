@@ -3,7 +3,12 @@ import { produce } from 'immer';
 import { ERaceTypes } from 'redux/race/raceTypes';
 import { IRace } from 'interfaces/IRace';
 
-const initialState: {} | IRace = {};
+const initialState: IRace = {
+  id: null,
+  name: '',
+  active: false,
+  participants: [],
+};
 
 export const raceReducer = produce((draftState, { type, payload }) => {
   switch (type) {

@@ -8,6 +8,10 @@ export const BetForm = () => {
     console.log(event.target.value);
   };
 
+  const resetForm = () => {};
+
+  const handleOnSubmit = () => {};
+
   return (
     <div className="bet-form">
       <TextField
@@ -29,10 +33,12 @@ export const BetForm = () => {
           width: '100%',
         }}
       >
-        <Button variant="text" sx={{ marginRight: 2 }}>
+        <Button variant="text" sx={{ marginRight: 2 }} onClick={resetForm}>
           Reset form
         </Button>
-        <Button variant="contained">Place bet</Button>
+        <Button variant="contained" onClick={handleOnSubmit}>
+          Place bet
+        </Button>
       </div>
     </div>
   );

@@ -8,19 +8,28 @@ import {
   Paper,
   Radio,
 } from '@mui/material';
+import { useSelector } from 'react-redux';
+
+import { selectRaceParticipants } from 'redux/race/raceSelectors';
+import { selectParticipantsWithIds } from 'redux/participants/participantsSelectors';
 
 export const ParticipantsTable = () => {
-  const rows = [
-    { name: 'Hello', winner: false, secondPlace: false, thirdPlace: false },
-    { name: 'Hello', winner: false, secondPlace: false, thirdPlace: false },
-    { name: 'Hello', winner: false, secondPlace: false, thirdPlace: false },
-    { name: 'Hello', winner: false, secondPlace: false, thirdPlace: false },
-  ];
+  const participantIds = useSelector(selectRaceParticipants);
+  const participants = useSelector(selectParticipantsWithIds(participantIds));
+
+  const rows = participants.map(({ id, body }) => ({
+    id,
+    name: body,
+    winner: false,
+    secondPlace: false,
+    thirdPlace: false,
+  }));
 
   const toggleRadio = (
     participant: string,
     betPlace: 'winner' | 'secondPlace' | 'thirdPlace',
   ) => {
+    // TODO: handle Participants Table
     console.log(participant);
     console.log(betPlace);
   };
@@ -38,7 +47,7 @@ export const ParticipantsTable = () => {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.name}>
+            <TableRow key={row.id}>
               <TableCell>{row.name}</TableCell>
               <TableCell>
                 <Radio

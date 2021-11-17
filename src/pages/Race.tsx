@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Chip } from '@mui/material';
 
 import styles from 'pages/Race.module.css';
-import { getRaceByIdRequest } from 'redux/race/actions/getRaceById';
+import { getRaceByIdRequest } from 'redux/race/getRaceByIdActions';
 import { selectRace } from 'redux/race/raceSelectors';
 import { BetForm } from 'components/BetForm';
+import { getParticipantsRequest } from 'redux/participants/getParticipantsActions';
 
 export const Race = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,10 @@ export const Race = () => {
   useEffect(() => {
     dispatch(getRaceByIdRequest(Number(id)));
   }, [dispatch, id]);
+
+  useEffect(() => {
+    dispatch(getParticipantsRequest());
+  }, [dispatch]);
 
   return (
     <section className={styles.race}>
