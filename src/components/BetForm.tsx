@@ -1,29 +1,44 @@
 import { Button, TextField } from '@mui/material';
+import { ChangeEventHandler, useState } from 'react';
 
 import { ParticipantsTable } from 'components/ParticipantsTable';
 
 export const BetForm = () => {
-  // TODO: fix any type
-  const handleOnChange = (event: any) => {
-    console.log(event.target.value);
+  const initialBets = {
+    winner: '',
+    secondPlace: '',
+    thirdPlace: '',
+  };
+  const [betAmount, setBetAmount] = useState(''); // TODO: useInput hook
+  const [bets, setBets] = useState(initialBets);
+
+  const handleOnChange: ChangeEventHandler<
+    HTMLTextAreaElement | HTMLInputElement
+  > = (event) => setBetAmount(event.target.value);
+
+  const resetForm = () => {
+    setBetAmount('');
+    setBets(initialBets);
   };
 
-  const resetForm = () => {};
-
-  const handleOnSubmit = () => {};
+  const handleOnSubmit = () => {
+    console.log('betAmount:', betAmount);
+    console.log('bets:', bets);
+  };
 
   return (
     <div className="bet-form">
       <TextField
         label="Bet amount"
         color="primary"
+        value={betAmount}
         onChange={handleOnChange}
         type="number"
         required
         aria-required
         sx={{ marginBottom: 2 }}
       />
-      <ParticipantsTable />
+      <ParticipantsTable bets={bets} setBets={setBets} />
       <div
         style={{
           display: 'flex',
