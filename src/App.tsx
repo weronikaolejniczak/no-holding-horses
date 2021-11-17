@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import { Races } from './pages/Races';
@@ -23,4 +19,4 @@ export const App = () => {
       </div>
     </Router>
   );
-}
+};

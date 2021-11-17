@@ -7,5 +7,5 @@ export const Race = () => {
     <div>
       <h1>{id} race</h1>
     </div>
-  )
-}
+  );
+};

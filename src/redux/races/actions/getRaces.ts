@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 
 import { ERacesTypes } from '../racesTypes';
 import { AppDispatch } from '../../store';
 import { IRace } from '../racesReducer';
 
 const getRaces = () => ({
-  type: ERacesTypes.GET_RACES
+  type: ERacesTypes.GET_RACES,
 });
 
 const getRacesSuccessfully = (response: IRace[]) => ({
@@ -15,7 +15,7 @@ const getRacesSuccessfully = (response: IRace[]) => ({
 
 const getRacesUnsuccessfully = (error: string) => ({
   type: ERacesTypes.GET_RACES_FAILURE,
-  error
+  error,
 });
 
 export const getRacesRequest = () => async (dispatch: AppDispatch) => {
@@ -26,4 +26,4 @@ export const getRacesRequest = () => async (dispatch: AppDispatch) => {
   } catch ({ message }) {
     dispatch(getRacesUnsuccessfully(message as string));
   }
-}
+};
