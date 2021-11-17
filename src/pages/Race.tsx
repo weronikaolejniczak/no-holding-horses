@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Chip } from '@mui/material';
 
-import styles from 'pages/Race.module.css';
 import { getRaceByIdRequest } from 'redux/race/getRaceByIdActions';
 import { selectRaceData } from 'redux/race/raceSelectors';
 import { BetForm } from 'components/BetForm';
@@ -24,7 +23,7 @@ export const Race = () => {
   }, [dispatch]);
 
   return (
-    <section className={styles.race}>
+    <section style={{ padding: 10 }}>
       <header
         style={{ alignItems: 'center', display: 'flex', marginBottom: 20 }}
       >

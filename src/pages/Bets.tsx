@@ -1,8 +1,6 @@
-import styles from 'pages/Bets.module.css';
-
 export const Bets = () => {
   return (
-    <section className={styles.bets}>
+    <section style={{ padding: 10 }}>
       <h2>My bets</h2>
     </section>
   );

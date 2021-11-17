@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 
 import { getRacesRequest } from 'redux/races/getRacesActions';
 import { RacesList } from 'components/RacesList';
-import styles from 'pages/Races.module.css';
 
 export const Races = () => {
   const dispatch = useDispatch();
@@ -13,7 +12,7 @@ export const Races = () => {
   }, [dispatch]);
 
   return (
-    <section className={styles.races}>
+    <section style={{ padding: 10 }}>
       <h2>Races</h2>
       <RacesList />
     </section>

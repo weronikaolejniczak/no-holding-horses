@@ -1,9 +1,17 @@
-import styles from 'pages/Home.module.css';
 import { ReactComponent as Horse } from 'assets/horse.svg';
 
 export const Home = () => {
   return (
-    <section className={styles.home}>
+    <section
+      style={{
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        padding: 10,
+        height: 'calc(100vh - 180px)',
+      }}
+    >
       <Horse width={300} height={400} fill="#1976d2" />
       <h2>There's no time for horsing around!</h2>
       <h1>

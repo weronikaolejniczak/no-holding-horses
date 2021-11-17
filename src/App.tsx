@@ -5,11 +5,10 @@ import { Race } from 'pages/Race';
 import { Home } from 'pages/Home';
 import { Bets } from 'pages/Bets';
 import { Header } from 'components/Header';
-import styles from './App.module.css';
 
 export const App = () => (
   <Router>
-    <div className={styles.App}>
+    <div style={{ minHeight: '100vh' }}>
       <Header />
       <Routes>
         <Route path="/races/:id" element={<Race />} />
