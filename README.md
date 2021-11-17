@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# No Holding Horses 🐎
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with TypeScript configuration.
+
+No Holding Horses is a race betting application, where you can see all the active and inactive races, and place your bets!
 
 ## Available Scripts
 
