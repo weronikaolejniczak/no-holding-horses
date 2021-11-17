@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Races } from './pages/Races';
-import { Race } from './pages/Race';
-import { Home } from './pages/Home';
-import { Navigation } from './components/Navigation';
+import { Races } from 'pages/Races';
+import { Race } from 'pages/Race';
+import { Home } from 'pages/Home';
+import { Navigation } from 'components/Navigation';
 
 export const App = () => (
   <Router>

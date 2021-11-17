@@ -1,6 +1,6 @@
 import produce from 'immer';
 
-import { ERacesTypes } from './racesTypes';
+import { ERacesTypes } from 'redux/races/racesTypes';
 
 export interface IRace {
   id: number;
