@@ -1,4 +1,4 @@
 export enum ENavigationTabs {
-  home = '/',
-  races = '/races',
+  HOME = '/',
+  RACES = '/races',
 }

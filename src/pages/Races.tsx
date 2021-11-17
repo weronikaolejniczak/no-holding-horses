@@ -9,7 +9,7 @@ export const Races = () => {
 
   useEffect(() => {
     dispatch(getRacesRequest());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

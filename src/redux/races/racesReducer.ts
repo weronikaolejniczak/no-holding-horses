@@ -3,10 +3,10 @@ import produce from 'immer';
 import { ERacesTypes } from './racesTypes';
 
 export interface IRace {
-  readonly id: number;
-  readonly name: string;
-  readonly active: boolean;
-  readonly participants: number[];
+  id: number;
+  name: string;
+  active: boolean;
+  participants: number[];
 }
 
 export type RacesStateType = IRace[];
