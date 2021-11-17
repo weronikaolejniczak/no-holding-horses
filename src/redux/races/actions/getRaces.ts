@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-import { ERacesTypes } from '../racesTypes';
-import { AppDispatch } from '../../store';
-import { IRace } from '../racesReducer';
+import { ERacesTypes } from 'redux/races/racesTypes';
+import { AppDispatch } from 'redux/store';
+import { IRace } from 'interfaces/IRace';
 
 const getRaces = () => ({
   type: ERacesTypes.GET_RACES,

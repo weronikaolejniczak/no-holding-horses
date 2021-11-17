@@ -14,7 +14,7 @@ export const Races = () => {
 
   return (
     <div className={styles.races}>
-      <h1>Races</h1>
+      <h2>Races</h2>
       <RacesList />
     </div>
   );

@@ -1,13 +1,7 @@
 import produce from 'immer';
 
 import { ERacesTypes } from 'redux/races/racesTypes';
-
-export interface IRace {
-  id: number;
-  name: string;
-  active: boolean;
-  participants: number[];
-}
+import { IRace } from 'interfaces/IRace';
 
 export type RacesStateType = IRace[];
 
