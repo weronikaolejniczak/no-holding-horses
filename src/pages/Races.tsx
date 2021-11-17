@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { getRacesRequest } from 'redux/races/actions/getRaces';
-import { ListOfRaces } from 'components/ListOfRaces';
+import { RacesList } from 'components/RacesList';
 
 export const Races = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export const Races = () => {
   return (
     <div>
       <h1>Races</h1>
-      <ListOfRaces />
+      <RacesList />
     </div>
   );
 };
