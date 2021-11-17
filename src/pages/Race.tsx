@@ -5,7 +5,7 @@ export const Race = () => {
 
   return (
     <div>
-      {id} race
+      <h1>{id} race</h1>
     </div>
   )
 }
