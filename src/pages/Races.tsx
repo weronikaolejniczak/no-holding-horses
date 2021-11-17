@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { getRacesRequest } from 'redux/races/actions/getRaces';
 import { RacesList } from 'components/RacesList';
+import styles from 'pages/Races.module.css';
 
 export const Races = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ export const Races = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={styles.races}>
       <h1>Races</h1>
       <RacesList />
     </div>
