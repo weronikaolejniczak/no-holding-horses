@@ -21,6 +21,12 @@ export const Navigation = () => {
         to={ENavigationTabs.RACES}
         component={Link}
       />
+      <Tab
+        label="Bets"
+        value={ENavigationTabs.BETS}
+        to={ENavigationTabs.BETS}
+        component={Link}
+      />
     </Tabs>
   );
 };

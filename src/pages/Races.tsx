@@ -13,9 +13,9 @@ export const Races = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.races}>
+    <section className={styles.races}>
       <h2>Races</h2>
       <RacesList />
-    </div>
+    </section>
   );
 };

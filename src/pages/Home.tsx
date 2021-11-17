@@ -3,7 +3,7 @@ import { ReactComponent as Horse } from 'assets/horse.svg';
 
 export const Home = () => {
   return (
-    <div className={styles.home}>
+    <section className={styles.home}>
       <Horse width={300} height={400} fill="#1976d2" />
       <h2>There's no time for horsing around!</h2>
       <h1>
@@ -13,6 +13,6 @@ export const Home = () => {
         </span>
         !
       </h1>
-    </div>
+    </section>
   );
 };
