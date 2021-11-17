@@ -6,6 +6,7 @@ import { Chip } from '@mui/material';
 import styles from 'pages/Race.module.css';
 import { getRaceByIdRequest } from 'redux/race/actions/getRaceById';
 import { selectRace } from 'redux/race/raceSelectors';
+import { BetForm } from 'components/BetForm';
 
 export const Race = () => {
   const dispatch = useDispatch();
@@ -18,11 +19,14 @@ export const Race = () => {
   }, [dispatch, id]);
 
   return (
-    <div className={styles.race}>
-      <header style={{ alignItems: 'center', display: 'flex' }}>
+    <section className={styles.race}>
+      <header
+        style={{ alignItems: 'center', display: 'flex', marginBottom: 20 }}
+      >
         <Chip label={active ? 'ACTIVE' : 'INACTIVE'} sx={{ marginRight: 2 }} />
         <h2>{name}</h2>
       </header>
-    </div>
+      <BetForm />
+    </section>
   );
 };
