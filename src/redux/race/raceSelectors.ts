@@ -13,5 +13,5 @@ export const selectRaceIsLoading = createSelector(
 
 export const selectRaceDataParticipants = createSelector(
   selectRaceData,
-  (data) => data?.participants,
+  (data) => data?.participants ?? [],
 );

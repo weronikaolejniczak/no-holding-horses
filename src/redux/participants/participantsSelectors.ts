@@ -11,8 +11,10 @@ const selectParticipantsData = createSelector(
 );
 
 export const selectParticipantsWithIds = (participantIds: number[]) =>
-  createSelector(selectParticipantsData, (participants) =>
-    participants.filter((participant: IParticipant) =>
-      participantIds.includes(participant.id),
-    ),
+  createSelector(
+    selectParticipantsData,
+    (participants) =>
+      participants.filter((participant: IParticipant) =>
+        participantIds.includes(participant.id),
+      ),
   );
