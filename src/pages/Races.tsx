@@ -1,24 +1,23 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-const dummyRaces = [
-  {
-    id: '1',
-    name: 'Fastest race',
-  },
-  {
-    id: '2',
-    name: 'Slowest race',
-  }
-];
+import { getRacesRequest } from '../redux/races/actions/getRaces';
+import { selectRaces } from '../redux/races/racesSelectors';
+import { RacesStateType } from "../redux/races/racesReducer";
 
 export const Races = () => {
-  const [races, setRaces] = useState(dummyRaces);
+  const dispatch = useDispatch();
+  const races: RacesStateType = useSelector(selectRaces);
+
+  useEffect(() => {
+    dispatch(getRacesRequest());
+  }, [dispatch]);
 
   return (
     <div>
       <h1>Races</h1>
-      {races.map(({ id }) => <Link to={`/races/${id}`}>{id} race</Link>)}
+      {races.map(({ id, name }) => <Link key={id} to={`/races/${id}`}>{name}</Link>)}
     </div>
   )
 }
