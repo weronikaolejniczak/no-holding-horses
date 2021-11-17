@@ -5,13 +5,13 @@ import { Chip } from '@mui/material';
 
 import styles from 'pages/Race.module.css';
 import { getRaceByIdRequest } from 'redux/race/getRaceByIdActions';
-import { selectRace } from 'redux/race/raceSelectors';
+import { selectRaceData } from 'redux/race/raceSelectors';
 import { BetForm } from 'components/BetForm';
 import { getParticipantsRequest } from 'redux/participants/getParticipantsActions';
 
 export const Race = () => {
   const dispatch = useDispatch();
-  const { active, name }: any = useSelector(selectRace); // TODO: fix any type
+  const { active, name } = useSelector(selectRaceData);
 
   const { id } = useParams();
 

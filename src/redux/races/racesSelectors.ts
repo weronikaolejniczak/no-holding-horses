@@ -1,3 +1,15 @@
+import { createSelector } from 'reselect';
+
 import { RootState } from 'redux/store';
 
-export const selectRaces = (state: RootState) => state.races;
+const selectRaces = (state: RootState) => state.races;
+
+export const selectRacesData = createSelector(
+  selectRaces,
+  (races) => races.data,
+);
+
+export const selectRacesIsLoading = createSelector(
+  selectRaces,
+  (races) => races.isLoading,
+);

@@ -1,12 +1,17 @@
 import { createSelector } from 'reselect';
 
 import { RootState } from 'redux/store';
-import { IRace } from 'interfaces/IRace'; // TODO: fix type cast
 
-export const selectRace = (state: RootState) => state.race;
+const selectRace = (state: RootState) => state.race;
 
-// TODO: fix participants error
-export const selectRaceParticipants = createSelector(
+export const selectRaceData = createSelector(selectRace, (race) => race.data);
+
+export const selectRaceIsLoading = createSelector(
   selectRace,
-  (race) => (race as IRace).participants,
+  (race) => race.isLoading,
+);
+
+export const selectRaceDataParticipants = createSelector(
+  selectRaceData,
+  (data) => data?.participants,
 );

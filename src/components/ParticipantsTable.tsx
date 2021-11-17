@@ -10,11 +10,11 @@ import {
 } from '@mui/material';
 import { useSelector } from 'react-redux';
 
-import { selectRaceParticipants } from 'redux/race/raceSelectors';
+import { selectRaceDataParticipants } from 'redux/race/raceSelectors';
 import { selectParticipantsWithIds } from 'redux/participants/participantsSelectors';
 
 export const ParticipantsTable = () => {
-  const participantIds = useSelector(selectRaceParticipants);
+  const participantIds = useSelector(selectRaceDataParticipants);
   const participants = useSelector(selectParticipantsWithIds(participantIds));
 
   const rows = participants.map(({ id, body }) => ({

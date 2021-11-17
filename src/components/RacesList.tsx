@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Card, Chip } from '@mui/material';
 
-import { selectRaces } from 'redux/races/racesSelectors';
-import { RacesStateType } from 'redux/races/racesReducer';
+import { selectRacesData } from 'redux/races/racesSelectors';
+import { IRace } from 'interfaces/IRace';
 
 // TODO: tidy up chip section, extract logic to hook
 export const RacesList = () => {
-  const races: RacesStateType = useSelector(selectRaces);
+  const races: IRace[] = useSelector(selectRacesData);
 
   const [filteredRaces, setFilteredRaces] = useState(races);
   const [filterMode, setFilterMode] = useState('all');

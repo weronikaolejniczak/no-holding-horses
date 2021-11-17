@@ -3,13 +3,28 @@ import produce from 'immer';
 import { ERacesTypes } from 'redux/races/racesTypes';
 import { IRace } from 'interfaces/IRace';
 
-export type RacesStateType = IRace[];
+export type RacesStateType = {
+  isLoading: boolean;
+  data: IRace[];
+};
 
-const initialState: RacesStateType = [];
+const initialState: RacesStateType = {
+  isLoading: false,
+  data: [],
+};
 
-export const racesReducer = produce((draftState, action) => {
-  switch (action.type) {
+export const racesReducer = produce((draftState, { type, error, payload }) => {
+  switch (type) {
+    case ERacesTypes.GET_RACES:
+      draftState.isLoading = true;
+      break;
     case ERacesTypes.GET_RACES_SUCCESS:
-      return (draftState = action.payload);
+      draftState.isLoading = false;
+      draftState.data = payload;
+      break;
+    case ERacesTypes.GET_RACES_FAILURE:
+      draftState.isLoading = false;
+      draftState.data = [];
+      break;
   }
 }, initialState);

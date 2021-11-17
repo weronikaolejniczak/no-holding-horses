@@ -5,7 +5,6 @@ import { racesReducer } from 'redux/races/racesReducer';
 import { raceReducer } from 'redux/race/raceReducer';
 import { participantsReducer } from 'redux/participants/participantsReducer';
 
-// TODO: fix never type
 const baseReducer = combineReducers({
   races: racesReducer,
   race: raceReducer,
