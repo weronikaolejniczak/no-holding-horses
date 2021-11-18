@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import throttle from 'lodash.throttle';
 
 import { ParticipantsTable } from 'components/ParticipantsTable';
-import { saveBets } from 'redux/bets/betsActions';
+import { saveAndHydrateBets } from 'redux/bets/betsActions';
 import { useInput } from 'hooks/useInput';
 
 interface IBetFormProps {
@@ -29,7 +29,7 @@ export const BetForm = ({ race = '' }: IBetFormProps) => {
 
   const handleOnSubmit = () => {
     resetForm();
-    dispatch(saveBets(race, Number(betAmount), bets));
+    dispatch(saveAndHydrateBets(race, Number(betAmount), bets));
   };
 
   const throttledSubmit = throttle(handleOnSubmit, 1000);
