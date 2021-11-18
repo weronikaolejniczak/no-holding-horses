@@ -6,6 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 No Holding Horses is a race betting application, where you can see all the active and inactive races, and place your bets!
 
+**Important note!** If you're using Brave or have security preferences set up, make sure you disable the shields for the hosted website, otherwise LocalStorage (state persistance) might not work!
+
 ## Overview
 
 ### Tech stack
