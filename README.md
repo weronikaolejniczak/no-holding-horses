@@ -1,10 +1,36 @@
 # No Holding Horses 🐎
 
+Check it out [here](http://weronikaolejniczak.pl/no-holding-horses/)!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with TypeScript configuration.
 
 No Holding Horses is a race betting application, where you can see all the active and inactive races, and place your bets!
 
+## Overview
+
+### Tech stack
+
+- React with Hooks
+- Redux with Immer, Reselect and store hydration through LocalStorage,
+- MaterialUI components to make the UI clean and simple, and the development faster and easier.
+
+### Features
+
+- listing the available races,
+- filtering the races by their status (active/inactive),
+- displaying more information about the race,
+- a form for placing a bet,
+- persisting bets tab with the list of all bets and their details.
+
+You can check out plans for the future in the `TODO.md` file!
+
 ## Available Scripts
+
+Install the dependencies by running: `yarn install`
+
+Add your `.env` file:
+
+`REACT_APP_RACES_API_URL=https://my-json-server.typicode.com/hdjfye/bet-api/`
 
 In the project directory, you can run:
 
@@ -21,6 +47,11 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `yarn test --coverage`
+
+Launches the test runner in the interactive watch mode.\
+Generates a coverage report.
+
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
@@ -30,16 +61,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
