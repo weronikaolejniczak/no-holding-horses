@@ -24,7 +24,7 @@ export const BetForm = ({ race = '' }: IBetFormProps) => {
   const [error, setError] = useState('');
 
   const validateForm = () =>
-    betAmount && bets.winner && bets.secondPlace && bets.thirdPlace;
+    Number(betAmount) > 0 && bets.winner && bets.secondPlace && bets.thirdPlace;
 
   const resetForm = () => {
     setError('');
