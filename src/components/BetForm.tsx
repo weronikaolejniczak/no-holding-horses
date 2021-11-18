@@ -1,9 +1,9 @@
-import { Button, TextField } from '@mui/material';
+import { TextField } from '@mui/material';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import throttle from 'lodash.throttle';
 
 import { ParticipantsTable } from 'components/ParticipantsTable';
+import { BetFormActions } from 'components/BetFormActions';
 import { saveAndHydrateBets } from 'redux/bets/betsActions';
 import { useInput } from 'hooks/useInput';
 
@@ -21,18 +21,27 @@ export const BetForm = ({ race = '' }: IBetFormProps) => {
   };
   const [betAmount, handleBetAmountOnChange, setBetAmount] = useInput('');
   const [bets, setBets] = useState(initialBets);
+  const [error, setError] = useState('');
+
+  const validateForm = () =>
+    betAmount && bets.winner && bets.secondPlace && bets.thirdPlace;
 
   const resetForm = () => {
+    setError('');
     setBetAmount('');
     setBets(initialBets);
   };
 
   const handleOnSubmit = () => {
-    resetForm();
-    dispatch(saveAndHydrateBets(race, Number(betAmount), bets));
+    const isDataValid = validateForm();
+    if (isDataValid) {
+      setError('');
+      resetForm();
+      dispatch(saveAndHydrateBets(race, Number(betAmount), bets));
+    } else {
+      setError('Choose a winner, 2nd and 3rd place, and enter the bet amount!');
+    }
   };
-
-  const throttledSubmit = throttle(handleOnSubmit, 1000);
 
   return (
     <div className="bet-form">
@@ -47,22 +56,11 @@ export const BetForm = ({ race = '' }: IBetFormProps) => {
         sx={{ marginBottom: 2 }}
       />
       <ParticipantsTable bets={bets} setBets={setBets} />
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop: 30,
-          width: '100%',
-        }}
-      >
-        <Button variant="text" sx={{ marginRight: 2 }} onClick={resetForm}>
-          Reset form
-        </Button>
-        <Button variant="contained" onClick={throttledSubmit}>
-          Place bet
-        </Button>
-      </div>
+      <BetFormActions
+        error={error}
+        handleOnSubmit={handleOnSubmit}
+        resetForm={resetForm}
+      />
     </div>
   );
 };
