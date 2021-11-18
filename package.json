@@ -20,6 +20,7 @@
     "husky": "^7.0.4",
     "immer": "^9.0.6",
     "lint-staged": "^12.0.2",
+    "lodash.map": "^4.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
@@ -66,6 +67,7 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash.map": "^4.6.13",
     "eslint-config-react-app": "^6.0.0"
   }
 }
