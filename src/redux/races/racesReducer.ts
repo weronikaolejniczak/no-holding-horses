@@ -4,13 +4,13 @@ import { ERacesTypes } from 'redux/races/racesTypes';
 import { IRace } from 'interfaces/IRace';
 
 export type RacesStateType = {
-  isLoading: boolean;
   data: IRace[];
+  isLoading: boolean;
 };
 
 const initialState: RacesStateType = {
-  isLoading: false,
   data: [],
+  isLoading: false,
 };
 
 export const racesReducer = produce((draftState, { type, payload }) => {
