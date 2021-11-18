@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 import { racesReducer } from 'redux/races/racesReducer';
 import { raceReducer } from 'redux/race/raceReducer';
 import { participantsReducer } from 'redux/participants/participantsReducer';
+import { betsReducer } from 'redux/bets/betsReducer';
 
 const baseReducer = combineReducers({
-  races: racesReducer,
-  race: raceReducer,
+  bets: betsReducer,
   participants: participantsReducer,
+  race: raceReducer,
+  races: racesReducer,
 });
 
 const middleWares = [thunk];

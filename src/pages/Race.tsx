@@ -30,7 +30,7 @@ export const Race = () => {
         <Chip label={active ? 'ACTIVE' : 'INACTIVE'} sx={{ marginRight: 2 }} />
         <h2>{name}</h2>
       </header>
-      <BetForm />
+      <BetForm race={name} />
     </section>
   );
 };

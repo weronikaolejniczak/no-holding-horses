@@ -1,9 +1,17 @@
 import { Button, TextField } from '@mui/material';
 import { ChangeEventHandler, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { ParticipantsTable } from 'components/ParticipantsTable';
+import { saveBets } from 'redux/bets/betsActions';
 
-export const BetForm = () => {
+interface IBetFormProps {
+  race: string | undefined;
+}
+
+export const BetForm = ({ race = '' }: IBetFormProps) => {
+  const dispatch = useDispatch();
+
   const initialBets = {
     winner: '',
     secondPlace: '',
@@ -21,10 +29,8 @@ export const BetForm = () => {
     setBets(initialBets);
   };
 
-  const handleOnSubmit = () => {
-    console.log('betAmount:', betAmount);
-    console.log('bets:', bets);
-  };
+  const handleOnSubmit = () =>
+    dispatch(saveBets(race, Number(betAmount), bets)); // TODO: check whether Number cast is okay
 
   return (
     <div className="bet-form">

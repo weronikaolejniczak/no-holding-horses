@@ -12,12 +12,7 @@ import { useSelector } from 'react-redux';
 
 import { selectRaceDataParticipants } from 'redux/race/raceSelectors';
 import { selectParticipantsWithIds } from 'redux/participants/participantsSelectors';
-
-interface IBets {
-  winner: string;
-  secondPlace: string;
-  thirdPlace: string;
-}
+import { IBets } from 'interfaces/IBets';
 
 interface IParticipantsTableProps {
   bets: IBets;
@@ -40,8 +35,12 @@ export const ParticipantsTable = ({
     participant: string,
     betPlace: 'winner' | 'secondPlace' | 'thirdPlace',
   ) => {
-    const entryForParticipant = Object.entries(bets).find(bet => bet[1] === participant);
-    const betForParticipant = entryForParticipant ? entryForParticipant[0] : undefined;
+    const entryForParticipant = Object.entries(bets).find(
+      (bet) => bet[1] === participant,
+    );
+    const betForParticipant = entryForParticipant
+      ? entryForParticipant[0]
+      : undefined;
     setBets((prevBets) =>
       betForParticipant
         ? { ...prevBets, [betForParticipant]: '', [betPlace]: participant }
