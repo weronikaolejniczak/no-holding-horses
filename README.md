@@ -1,6 +1,6 @@
 # No Holding Horses 🐎
 
-Check it out [here](http://weronikaolejniczak.pl/no-holding-horses/)!
+Check it out [here](https://weronikaolejniczak.pl/no-holding-horses/)!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with TypeScript configuration.
 
