@@ -55,8 +55,8 @@ export const ParticipantsTable = ({
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell>Winner</TableCell>
-            <TableCell>Second place</TableCell>
-            <TableCell>Third place</TableCell>
+            <TableCell>2nd place</TableCell>
+            <TableCell>3rd place</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

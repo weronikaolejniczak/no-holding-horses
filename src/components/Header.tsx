@@ -12,7 +12,7 @@ export const Header = () => (
       paddingRight: 30,
     }}
   >
-    <h1 style={{ marginRight: 25 }}> No Holding Horses 🐎 </h1>
+    <h3 style={{ marginRight: 25 }}> No Holding Horses 🐎 </h3>
     <Navigation />
   </header>
 );
