@@ -13,7 +13,7 @@ const initialState: RacesStateType = {
   data: [],
 };
 
-export const racesReducer = produce((draftState, { type, error, payload }) => {
+export const racesReducer = produce((draftState, { type, payload }) => {
   switch (type) {
     case ERacesTypes.GET_RACES:
       draftState.isLoading = true;

@@ -1,10 +1,11 @@
 import { Button, TextField } from '@mui/material';
-import { ChangeEventHandler, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import throttle from 'lodash.throttle';
 
 import { ParticipantsTable } from 'components/ParticipantsTable';
 import { saveBets } from 'redux/bets/betsActions';
+import { useInput } from 'hooks/useInput';
 
 interface IBetFormProps {
   race: string | undefined;
@@ -18,20 +19,18 @@ export const BetForm = ({ race = '' }: IBetFormProps) => {
     secondPlace: '',
     thirdPlace: '',
   };
-  const [betAmount, setBetAmount] = useState(''); // TODO: useInput hook
+  const [betAmount, handleBetAmountOnChange, setBetAmount] = useInput('');
   const [bets, setBets] = useState(initialBets);
-
-  const handleOnChange: ChangeEventHandler<
-    HTMLTextAreaElement | HTMLInputElement
-  > = (event) => setBetAmount(event.target.value);
 
   const resetForm = () => {
     setBetAmount('');
     setBets(initialBets);
   };
 
-  const handleOnSubmit = () =>
+  const handleOnSubmit = () => {
+    resetForm();
     dispatch(saveBets(race, Number(betAmount), bets));
+  };
 
   const throttledSubmit = throttle(handleOnSubmit, 1000);
 
@@ -41,7 +40,7 @@ export const BetForm = ({ race = '' }: IBetFormProps) => {
         label="Bet amount"
         color="primary"
         value={betAmount}
-        onChange={handleOnChange}
+        onChange={handleBetAmountOnChange}
         type="number"
         required
         aria-required

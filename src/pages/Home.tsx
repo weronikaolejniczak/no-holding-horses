@@ -10,7 +10,7 @@ export const Home = () => {
         justifyContent: 'center',
         padding: 10,
         paddingBottom: 70,
-        minHeight: 'calc(100vh - 150px)',
+        maxHeight: 'calc(100vh - 115px)',
       }}
     >
       <Horse width={300} height={400} fill="#1976d2" />

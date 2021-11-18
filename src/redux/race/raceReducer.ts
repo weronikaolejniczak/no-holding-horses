@@ -25,5 +25,9 @@ export const raceReducer = produce((draftState, { type, error, payload }) => {
     case ERaceTypes.GET_RACE_FAILURE:
       draftState.isLoading = false;
       draftState.data = {};
+      break;
+    case ERaceTypes.CLEAR_RACE:
+      draftState.data = {};
+      break;
   }
 }, initialState);

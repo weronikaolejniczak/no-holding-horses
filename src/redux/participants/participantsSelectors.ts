@@ -5,6 +5,11 @@ import { IParticipant } from 'interfaces/IParticipant';
 
 const selectParticipants = (state: RootState) => state.participants;
 
+export const selectParticipantsIsLoading = createSelector(
+  selectParticipants,
+  (participants) => participants.isLoading,
+);
+
 const selectParticipantsData = createSelector(
   selectParticipants,
   (participants) => participants.data,

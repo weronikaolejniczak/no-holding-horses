@@ -1,11 +1,14 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { getRacesRequest } from 'redux/races/getRacesActions';
 import { RacesList } from 'components/RacesList';
+import { selectRacesIsLoading } from 'redux/races/racesSelectors';
 
+// TODO: use skeleton loading
 export const Races = () => {
   const dispatch = useDispatch();
+  const isRacesLoading = useSelector(selectRacesIsLoading);
 
   useEffect(() => {
     dispatch(getRacesRequest());
@@ -20,7 +23,7 @@ export const Races = () => {
       }}
     >
       <h2>Races</h2>
-      <RacesList />
+      {isRacesLoading ? <div>Loading...</div> : <RacesList />}
     </section>
   );
 };
