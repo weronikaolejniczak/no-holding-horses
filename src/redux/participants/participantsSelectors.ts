@@ -10,7 +10,7 @@ export const selectParticipantsIsLoading = createSelector(
   (participants) => participants.isLoading,
 );
 
-const selectParticipantsData = createSelector(
+export const selectParticipantsData = createSelector(
   selectParticipants,
   (participants) => participants.data,
 );
