@@ -1,16 +1,16 @@
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Chip } from '@mui/material';
+import { Chip, Skeleton } from '@mui/material';
 
 import { clearRace } from 'redux/race/clearRaceActions';
 import { getRaceByIdRequest } from 'redux/race/getRaceByIdActions';
 import { selectRaceData, selectRaceIsLoading } from 'redux/race/raceSelectors';
-import { BetForm } from 'components/BetForm';
 import { getParticipantsRequest } from 'redux/participants/getParticipantsActions';
 import { selectParticipantsIsLoading } from 'redux/participants/participantsSelectors';
+import { BetForm } from 'components/BetForm';
+import { BetFormSkeleton } from 'components/BetFormSkeleton';
 
-// TODO: use skeleton loading
 export const Race = () => {
   const dispatch = useDispatch();
   const { active, name } = useSelector(selectRaceData);
@@ -45,13 +45,20 @@ export const Race = () => {
       <header
         style={{ alignItems: 'center', display: 'flex', marginBottom: 20 }}
       >
-        <Chip
-          label={isRaceLoading ? 'Loading...' : chipLabel}
-          sx={{ marginRight: 2 }}
-        />
-        <h2>{isRaceLoading ? 'Loading...' : name}</h2>
+        {isRaceLoading ? (
+          <Chip sx={{ marginRight: 2, width: 100 }} />
+        ) : (
+          <Chip label={chipLabel} sx={{ marginRight: 2 }} />
+        )}
+        {isRaceLoading ? (
+          <Skeleton>
+            <h2>Hello, World! I'm a skeleton title!</h2>
+          </Skeleton>
+        ) : (
+          <h2>{name}</h2>
+        )}
       </header>
-      {isParticipantsLoading ? <div>Loading...</div> : <BetForm race={name} />}
+      {isParticipantsLoading ? <BetFormSkeleton /> : <BetForm race={name} />}
     </section>
   );
 };
