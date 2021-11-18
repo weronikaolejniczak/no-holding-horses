@@ -4,16 +4,16 @@ import { ERaceTypes } from 'redux/race/raceTypes';
 import { AppDispatch } from 'redux/store';
 import { IRace } from 'interfaces/IRace';
 
-const getRaceById = () => ({
+export const getRaceById = () => ({
   type: ERaceTypes.GET_RACE,
 });
 
-const getRaceByIdSuccessfully = (response: IRace[]) => ({
+export const getRaceByIdSuccessfully = (response: IRace[]) => ({
   type: ERaceTypes.GET_RACE_SUCCESS,
   payload: response,
 });
 
-const getRaceByIdUnsuccessfully = (error: string) => ({
+export const getRaceByIdUnsuccessfully = (error: string) => ({
   type: ERaceTypes.GET_RACE_FAILURE,
   error,
 });
