@@ -1,11 +1,12 @@
 import { Navigation } from 'components/Navigation';
+import { EColors } from 'constants/EColors';
 
 // TODO: create breakpoint
 export const Header = () => (
   <header
     style={{
       alignItems: 'center',
-      backgroundColor: 'white',
+      backgroundColor: EColors.surface,
       display: 'flex',
       padding: 10,
       paddingLeft: 30,

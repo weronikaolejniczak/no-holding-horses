@@ -6,10 +6,17 @@ import { Home } from 'pages/Home';
 import { Bets } from 'pages/Bets';
 import { Header } from 'components/Header';
 import { Footer } from 'components/Footer';
+import { EColors } from 'constants/EColors';
 
 export const App = () => (
   <Router>
-    <div style={{ minHeight: '100vh', position: 'relative' }}>
+    <div
+      style={{
+        backgroundColor: EColors.background,
+        minHeight: '100vh',
+        position: 'relative',
+      }}
+    >
       <Header />
       <Routes>
         <Route path="/races/:id" element={<Race />} />

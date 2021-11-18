@@ -1,3 +1,5 @@
+import { EColors } from 'constants/EColors';
+
 export const Footer = () => {
   const year = new Date().getFullYear();
 
@@ -5,7 +7,7 @@ export const Footer = () => {
     <footer
       style={{
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: EColors.surface,
         bottom: 0,
         display: 'flex',
         height: 50,

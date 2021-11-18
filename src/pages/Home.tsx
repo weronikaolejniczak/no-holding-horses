@@ -1,4 +1,7 @@
 import { ReactComponent as Horse } from 'assets/horse.svg';
+import { EColors } from 'constants/EColors';
+import { ENavigationTabs } from 'enums/ENavigationTabs';
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
   return (
@@ -6,21 +9,18 @@ export const Home = () => {
       style={{
         alignItems: 'center',
         display: 'flex',
+        height: 'calc(100vh - 165px)',
         flexDirection: 'column',
         justifyContent: 'center',
         padding: 10,
         paddingBottom: 70,
-        maxHeight: 'calc(100vh - 115px)',
       }}
     >
-      <Horse width={300} height={400} fill="#1976d2" />
-      <h2>There's no time for horsing around!</h2>
+      <Horse width={320} height={350} fill={EColors.darkBackground} />
+      <h3>There's no time for horsing around!</h3>
       <h1>
         <span>Place your bet </span>
-        <span style={{ color: '#1976d2', textDecoration: 'underline' }}>
-          now
-        </span>
-        !
+        <Link to={ENavigationTabs.RACES}>NOW</Link>!
       </h1>
     </section>
   );
