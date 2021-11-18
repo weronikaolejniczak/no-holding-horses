@@ -43,7 +43,7 @@ describe('raceSelectors', () => {
     });
 
     describe('selectRaceDataParticipants', () => {
-      it('should return , when it', () => {
+      it('should return an array of participants, when the data is not an empty object', () => {
         const mockState = {
           data: {
             id: 1,
@@ -54,7 +54,9 @@ describe('raceSelectors', () => {
           isLoading: true,
         };
         expect(
-          selectRaceDataParticipants.resultFunc(selectRaceData(mockState)),
+          selectRaceDataParticipants.resultFunc(
+            selectRaceData.resultFunc(mockState),
+          ),
         ).toEqual([1, 4, 6]);
       });
 

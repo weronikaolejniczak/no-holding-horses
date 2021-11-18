@@ -4,16 +4,16 @@ import { EParticipantsTypes } from 'redux/participants/participantsTypes';
 import { AppDispatch } from 'redux/store';
 import { IParticipant } from 'interfaces/IParticipant';
 
-const getParticipants = () => ({
+export const getParticipants = () => ({
   type: EParticipantsTypes.GET_PARTICIPANTS,
 });
 
-const getParticipantsSuccessfully = (response: IParticipant[]) => ({
+export const getParticipantsSuccessfully = (response: IParticipant[]) => ({
   type: EParticipantsTypes.GET_PARTICIPANTS_SUCCESS,
   payload: response,
 });
 
-const getParticipantsUnsuccessfully = (error: string) => ({
+export const getParticipantsUnsuccessfully = (error: string) => ({
   type: EParticipantsTypes.GET_PARTICIPANTS_FAILURE,
   error,
 });

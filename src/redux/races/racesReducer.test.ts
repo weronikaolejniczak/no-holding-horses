@@ -24,7 +24,20 @@ describe('racesReducer', () => {
       data: [],
       isLoading: true,
     };
-    const mockAction = getRacesSuccessfully([]);
+    const mockAction = getRacesSuccessfully([
+      {
+        id: 1,
+        name: 'Wisconsin race',
+        active: true,
+        participants: [1, 5],
+      },
+      {
+        id: 2,
+        name: 'Tahoma race',
+        active: false,
+        participants: [1, 3, 5],
+      },
+    ]);
     const mockResultState = {
       data: [
         {

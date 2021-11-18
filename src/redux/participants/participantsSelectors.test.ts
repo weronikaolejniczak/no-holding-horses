@@ -46,7 +46,7 @@ describe('participantsSelectors', () => {
         };
         expect(
           selectParticipantsWithIds(participantsIds).resultFunc(
-            selectParticipantsData(mockState),
+            selectParticipantsData.resultFunc(mockState),
           ),
         ).toEqual([
           { id: 1, body: 'Shadow' },
@@ -65,7 +65,7 @@ describe('participantsSelectors', () => {
         };
         expect(
           selectParticipantsWithIds(participantsIds).resultFunc(
-            selectParticipantsData(mockState),
+            selectParticipantsData.resultFunc(mockState),
           ),
         ).toEqual([]);
       });
