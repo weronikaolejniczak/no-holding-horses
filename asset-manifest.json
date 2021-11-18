@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/no-holding-horses/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/no-holding-horses/static/js/main.2d14c8e7.chunk.js",
-    "main.js.map": "/no-holding-horses/static/js/main.2d14c8e7.chunk.js.map",
+    "main.js": "/no-holding-horses/static/js/main.e69d65f9.chunk.js",
+    "main.js.map": "/no-holding-horses/static/js/main.e69d65f9.chunk.js.map",
     "runtime-main.js": "/no-holding-horses/static/js/runtime-main.02a7936b.js",
     "runtime-main.js.map": "/no-holding-horses/static/js/runtime-main.02a7936b.js.map",
-    "static/js/2.640d29fd.chunk.js": "/no-holding-horses/static/js/2.640d29fd.chunk.js",
-    "static/js/2.640d29fd.chunk.js.map": "/no-holding-horses/static/js/2.640d29fd.chunk.js.map",
+    "static/js/2.ebf0b1a4.chunk.js": "/no-holding-horses/static/js/2.ebf0b1a4.chunk.js",
+    "static/js/2.ebf0b1a4.chunk.js.map": "/no-holding-horses/static/js/2.ebf0b1a4.chunk.js.map",
     "index.html": "/no-holding-horses/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/no-holding-horses/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.640d29fd.chunk.js.LICENSE.txt": "/no-holding-horses/static/js/2.640d29fd.chunk.js.LICENSE.txt",
+    "static/js/2.ebf0b1a4.chunk.js.LICENSE.txt": "/no-holding-horses/static/js/2.ebf0b1a4.chunk.js.LICENSE.txt",
     "static/media/horse.f06be47a.svg": "/no-holding-horses/static/media/horse.f06be47a.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.02a7936b.js",
-    "static/js/2.640d29fd.chunk.js",
+    "static/js/2.ebf0b1a4.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.2d14c8e7.chunk.js"
+    "static/js/main.e69d65f9.chunk.js"
   ]
 }
