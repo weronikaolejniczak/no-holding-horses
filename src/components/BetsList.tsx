@@ -9,7 +9,7 @@ export const BetsList = () => {
   return (
     <div className="bets-list">
       {bets.map(({ name, betAmount, bets }) => (
-        <Card raised sx={{ padding: 2, margin: 2 }}>
+        <Card key={name} raised sx={{ padding: 2, margin: 2 }}>
           <h3>{name}</h3>
           <p>
             <span style={{ fontWeight: 'bold' }}>Bet amount:</span> {betAmount}

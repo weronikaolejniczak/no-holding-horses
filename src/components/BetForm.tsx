@@ -1,6 +1,7 @@
 import { Button, TextField } from '@mui/material';
 import { ChangeEventHandler, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import throttle from 'lodash.throttle';
 
 import { ParticipantsTable } from 'components/ParticipantsTable';
 import { saveBets } from 'redux/bets/betsActions';
@@ -30,7 +31,9 @@ export const BetForm = ({ race = '' }: IBetFormProps) => {
   };
 
   const handleOnSubmit = () =>
-    dispatch(saveBets(race, Number(betAmount), bets)); // TODO: check whether Number cast is okay
+    dispatch(saveBets(race, Number(betAmount), bets));
+
+  const throttledSubmit = throttle(handleOnSubmit, 1000);
 
   return (
     <div className="bet-form">
@@ -57,7 +60,7 @@ export const BetForm = ({ race = '' }: IBetFormProps) => {
         <Button variant="text" sx={{ marginRight: 2 }} onClick={resetForm}>
           Reset form
         </Button>
-        <Button variant="contained" onClick={handleOnSubmit}>
+        <Button variant="contained" onClick={throttledSubmit}>
           Place bet
         </Button>
       </div>

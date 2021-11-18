@@ -15,10 +15,5 @@ export const betsReducer = produce((draftState, { type, payload }) => {
       const { id, betAmount, bets } = payload;
       draftState[id] = { betAmount, bets };
       break;
-    case EBetsTypes.REMOVE_BET:
-      delete draftState[payload.id];
-      break;
-    case EBetsTypes.CLEAR_BETS:
-      return (draftState = {});
   }
 }, initialState);
