@@ -23,7 +23,7 @@ export const Race = () => {
   }, [dispatch]);
 
   return (
-    <section style={{ padding: 10 }}>
+    <section style={{ padding: 10, paddingBottom: 70, minHeight: 'calc(100vh - 150px)' }}>
       <header
         style={{ alignItems: 'center', display: 'flex', marginBottom: 20 }}
       >

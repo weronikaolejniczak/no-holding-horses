@@ -9,7 +9,8 @@ export const Home = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         padding: 10,
-        height: 'calc(100vh - 180px)',
+        paddingBottom: 70,
+        minHeight: 'calc(100vh - 150px)',
       }}
     >
       <Horse width={300} height={400} fill="#1976d2" />
